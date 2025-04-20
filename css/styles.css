@@ -1,5 +1,6 @@
 :root {
-	--white-color: #fffaf2;
+	--white-color: #fff;
+	--light-white: #fffaf2;
 	--light-brown: #f5d6ab;
 	--brown-color: #f5d6ab;
 	--dark-brown: #8b4136;
@@ -18,7 +19,7 @@ body {
 	font-size: 18px;
 	line-height: 1.7;
 	color: var(--dark-gray);
-	background-color: white;
+	background-color: var(--light-white);
 }
 
 ul,
@@ -42,11 +43,21 @@ a {
 .site__wrapper {
 	background-image: url(../images/header/background.png);
 	background-position: center;
+	background-repeat: no-repeat;
 }
 
 .site-header {
 	padding-top: 93px;
 	padding-bottom: 93px;
+}
+
+.site-header__logo-link {
+	transition: all 0.4s ease;
+}
+
+.site-header__logo-link:active {
+	opacity: 0.6;
+	transform: translateY(8px);
 }
 
 .site-header__container {
@@ -68,8 +79,19 @@ a {
 	margin-right: 60px;
 }
 
+.site-header__link:active {
+	opacity: 0.6;
+}
+
 .site-header__link {
 	color: var(--white-color);
+	transition: all 0.4s ease;
+}
+
+.site-header__link:hover {
+	text-decoration: underline;
+	text-decoration-style: solid;
+	color: #377dff;
 }
 
 .menu {
@@ -83,8 +105,108 @@ a {
 }
 
 .hero__title {
+	font-size: 64px;
+	line-height: 1;
+	vertical-align: middle;
+	margin-bottom: 26px;
 }
+
+.hero__title::selection {
+	background-color: #121a94;
+}
+
 .hero__text {
+	font-size: 24px;
+	line-height: 1;
+	margin-bottom: 106px;
+}
+
+.hero__link {
+	color: #fff;
+	font-size: 18px;
+	line-height: 1;
+	text-decoration: underline;
+	transition: all 0.4s ease;
+}
+
+.hero__link:active {
+	opacity: 0.6;
+}
+
+.hero__link:hover {
+	text-decoration: underline;
+	text-decoration-style: solid;
+	color: #377dff;
+}
+
+.about {
+	padding-top: 93px;
+}
+
+.site-hero__list {
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 30px;
+	letter-spacing: 0%;
+	text-align: justify;
+	padding-bottom: 115px;
+}
+
+.site-hero__title {
+	margin-bottom: 76px;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 100%;
+	letter-spacing: 0%;
+}
+
+.site-hero__text:not(:last-child) {
+	margin-bottom: 60px;
+}
+
+.site-header__img:active {
+	opacity: 0.6;
+}
+
+.site-header__item a {
+	color: #fff;
+	transition: all 0.4s ease;
+}
+
+.site-header__item a:active {
+	opacity: 0.6;
+}
+
+.site-header__item a:hover {
+	transform: scale(1.2);
+	color: #377dff;
+	text-decoration: underline;
+	text-decoration-style: solid;
+}
+
+.about {
+	padding-top: 93px;
+}
+
+.site-hero__list {
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 30px;
+	letter-spacing: 0%;
+	text-align: justify;
+	padding-bottom: 115px;
+}
+
+.site-hero__title {
+	margin-bottom: 76px;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 100%;
+	letter-spacing: 0%;
+}
+
+.site-hero__text:not(:last-child) {
+	margin-bottom: 60px;
 }
 
 /* MEDIA */
@@ -101,6 +223,35 @@ a {
 
 	.site-header__item:not(:last-child) {
 		margin-right: 40px;
+	}
+
+	.hero {
+		padding-top: 50px;
+		padding-bottom: 200px;
+	}
+
+	.hero__title {
+		font-size: 60px;
+		margin-bottom: 26px;
+	}
+
+	.hero__text {
+		font-size: 20px;
+		margin-bottom: 100px;
+	}
+
+	.about {
+		padding-top: 80px;
+	}
+
+	.site-hero__list {
+		font-size: 16px;
+		padding-bottom: 100px;
+	}
+
+	.site-hero__title {
+		margin-bottom: 70px;
+		font-size: 21px;
 	}
 }
 
@@ -128,6 +279,35 @@ a {
 		top: 60px;
 		left: 34px;
 	}
+
+	.hero {
+		padding-top: 40px;
+		padding-bottom: 160px;
+	}
+
+	.hero__title {
+		font-size: 40px;
+		margin-bottom: 20px;
+	}
+
+	.hero__text {
+		font-size: 18px;
+		margin-bottom: 80px;
+	}
+
+	.about {
+		padding-top: 60px;
+	}
+
+	.site-hero__list {
+		font-size: 16px;
+		padding-bottom: 80px;
+	}
+
+	.site-hero__title {
+		margin-bottom: 60px;
+		font-size: 20px;
+	}
 }
 
 @media screen and (max-width: 420px) {
@@ -140,10 +320,41 @@ a {
 		padding-bottom: 39px;
 	}
 
-
-
-
 	.menu {
 		top: 39px;
+	}
+
+	.hero__container {
+		text-align: center;
+	}
+
+	.hero {
+		padding-top: 36px;
+		padding-bottom: 50px;
+	}
+
+	.hero__title {
+		font-size: 20px;
+		margin-bottom: 13px;
+	}
+
+	.hero__text {
+		font-size: 13px;
+		margin-bottom: 50px;
+	}
+
+	.about {
+		padding-top: 25px;
+	}
+
+	.site-hero__list {
+		font-size: 12px;
+		padding-bottom: 80px;
+	}
+
+	.site-hero__title {
+		margin-bottom: 50px;
+		font-size: 24px;
+		text-align: center;
 	}
 }
